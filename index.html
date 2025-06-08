@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love!</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #fff;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+    p {
+      font-size: 1.4em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    .heart {
+      color: red;
+      font-size: 2em;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    #surpriseBtn {
+      background: white;
+      color: #ff4d6d;
+      padding: 15px 25px;
+      border: none;
+      font-size: 1em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    #surpriseMsg {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.6em;
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday, My Love! 🎂</h1>
+  <p>Today is all about you, the most beautiful soul in my life. I’m so lucky to have you. 💖</p>
+  <p>May your smile shine as bright as your heart. Here’s a small surprise... 🎁</p>
+  <div class="heart">❤️</div>
+  <button id="surpriseBtn">Click for Surprise!</button>
+  <div id="surpriseMsg">💫 You are my universe, and I love you more every day 💫</div>
+
+  <script>
+    document.getElementById('surpriseBtn').onclick = function() {
+      document.getElementById('surpriseMsg').style.display = 'block';
+      confetti();
+    }
+
+    // Basic confetti effect
+    function confetti() {
+      for (let i = 0; i < 100; i++) {
+        let div = document.createElement('div');
+        div.style.position = 'absolute';
+        div.style.width = '10px';
+        div.style.height = '10px';
+        div.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+        div.style.top = Math.random() * window.innerHeight + 'px';
+        div.style.left = Math.random() * window.innerWidth + 'px';
+        div.style.opacity = 0.7;
+        div.style.borderRadius = '50%';
+        div.style.animation = `fall ${3 + Math.random() * 3}s ease-in infinite`;
+        document.body.appendChild(div);
+      }
+    }
+  </script>
+</body>
+</html>
